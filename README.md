@@ -1,4 +1,4 @@
-#CSS TO THE RES-Q
+# CSS TO THE RES-Q
 
 ## ASSIGNMENT
 I've chosen to create a magazine that supports day and night mode
