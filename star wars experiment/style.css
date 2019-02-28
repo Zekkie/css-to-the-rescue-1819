@@ -1,0 +1,339 @@
+html,body{
+  font-family: Arial, sans-serif;
+  font-size:1em;
+  color:#000000;
+  margin:0;
+  padding:0;
+  scroll-behavior: smooth;
+}
+
+body{
+  position: relative;
+  overflow: hidden;
+}
+
+
+svg{
+  width:1920px;
+  height:1080px;
+  position:fixed;
+  z-index:-999;
+  top:0;
+  left:0;
+}
+
+circle{
+  --aniduration: 2s;
+  --paraX: 0px;
+  --paraY: 0px;
+}
+
+circle{
+  fill:white;
+  transform: translate(var(--paraX), var(--paraY));
+  animation-duration: var(--aniduration);
+  animation-name: starpulse;
+  opacity:0.3;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.streak-1{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-1 30s ease-in-out infinite;
+}
+
+.streak-2{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-2 30s ease-in-out infinite;
+}
+
+.streak-3{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-3 30s ease-in-out infinite;
+}
+
+.streak-4{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-4 30s ease-in-out infinite;
+}
+
+.streak-5{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-5 30s ease-in-out infinite;
+}
+
+.streak-6{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-6 30s ease-in-out infinite;
+}
+
+@keyframes starpulse{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0.2;
+  }
+}
+
+@keyframes dash-1 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  70%{
+    stroke-dashoffset:303;
+  }
+  72%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+@keyframes dash-2 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  60%{
+    stroke-dashoffset:303;
+  }
+  61%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+@keyframes dash-3 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  30%{
+    stroke-dashoffset:303;
+  }
+  32%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+@keyframes dash-4 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  40%{
+    stroke-dashoffset:303;
+  }
+  41%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+@keyframes dash-5 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  5%{
+    stroke-dashoffset:303;
+  }
+  6%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+
+@keyframes dash-6 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  20%{
+    stroke-dashoffset:303;
+  }
+  21%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+
+main{
+  color:#ffffff;
+  margin-bottom: 100px;
+ 
+
+}
+
+
+body > header, main {
+  max-width:960px;
+  min-width: 350px;
+  margin:0 auto;
+}
+
+body > header {
+  text-align: center;
+  
+}
+
+
+body > header h1 {
+  text-transform: uppercase;
+}
+
+section > header {
+  text-align: center;
+  padding-bottom:20px;
+}
+
+main > section {
+  border: 5px solid black;
+  margin-bottom: 20px;
+}
+
+section > section {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(310px, 1fr) );
+  gap:20px;
+  padding:20px;
+}
+
+section > article > h3 {
+  padding:0;
+  margin:0;
+}
+
+p{
+  margin-top:20px;
+}
+
+.card:focus{
+  background: white;
+  outline: none;
+  color: black;
+}
+
+.starwars{
+  perspective: 1000px;
+   height: 800px;
+}
+
+.crawler {
+  position: relative;
+  top:10000px;
+  width: 100%;
+  animation: crawl 60s linear;
+  animation-delay: 30s;
+  transform-origin: 50% 100%;
+}
+
+.crawler:hover {
+  animation-play-state: paused;
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+  position: absolute;
+  top:-21px;
+
+}
+
+.typewriter{
+  z-index: 200;
+  color: #ffffff;
+  height:100vh;
+  width:100vw;
+  padding:0;
+  margin:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  
+  opacity: 0;
+  z-index: -5;
+}
+
+.typewriter-wrapper{
+  padding-right: 10px;
+  overflow: hidden;
+  height: 2.2em;
+  white-space: nowrap;
+}
+
+.typewriter-title {
+  margin:0;
+}
+
+.prelude-1 {
+  animation: fade-prelude 10s ease-out;
+  animation-delay: 5s;
+}
+
+.prelude-2 {
+  animation: fade-prelude 10s ease-out;
+  animation-delay: 20s;
+}
+
+@keyframes fade-prelude {
+  from{
+    opacity: 0;
+    display: none;
+  }
+  
+  5%{
+    opacity: 1;
+    display: block;
+  }
+
+  90%{
+    opacity: 1;
+  }
+
+
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes crawl {
+
+  0% {
+    top:1400px;
+    transform: rotateX(30deg);
+    transform: rotateX(35deg) translateZ(2500px);
+  }
+  100% {
+    top:-9000px;
+    transform: rotateX(35deg) translateZ(-2900px);
+  })
+}

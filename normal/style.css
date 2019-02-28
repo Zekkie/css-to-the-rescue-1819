@@ -1,0 +1,358 @@
+html,body{
+  font-family: Arial, sans-serif;
+  font-size:1em;
+  color:#000000;
+  margin:0;
+  padding:0;
+  scroll-behavior: smooth;
+}
+
+body{
+  position: relative;
+}
+
+body > header, main{
+  max-width:960px;
+  min-width: 350px;
+}
+
+ul{
+  position: fixed;
+  background: #ffffff;
+  list-style-type: none;
+  width: 100%;
+  margin:0;
+  top:0;
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap;
+  z-index: 999;
+}
+
+li{
+  display: inline-block;
+  margin-right: 20px;
+  width: 50px;
+}
+
+a {
+  color:#000000;
+  text-decoration: none;
+  display: block;
+  padding:20px;
+}
+
+svg{
+  width:1920px;
+  height:1080px;
+  position:fixed;
+  z-index:-999;
+  top:0;
+  left:0;
+  --clipX: 0px;
+  --clipY: 0px;
+}
+
+circle{
+  --aniduration: 2s;
+  --paraX: 0px;
+  --paraY: 0px;
+}
+
+circle{
+  fill:#ffffff;
+  transform: translate(var(--paraX), var(--paraY));
+  animation-duration: var(--aniduration);
+  animation-name: starpulse;
+  opacity:0.3;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+
+circle,svg {
+  transition: fill 0.2s;
+}
+
+input,label {
+  position: fixed;
+   margin-top:50px;
+    color: #ffffff;
+}
+
+
+input{
+  left:-50px;
+}
+
+label {
+  margin-left:40px;
+  top:20px;
+  cursor: pointer;
+}
+
+
+input:checked ~ svg{
+  clip-path:circle(200px at var(--clipX) var(--clipY));
+  opacity: 0.5;
+  transform-origin: 50% 50%;
+  transform:scale(3);
+}
+
+
+
+input:checked ~ * {
+  color: #000000;
+}
+
+input:checked ~ main .card:focus {
+  background: #000000;
+  color:#ffffff;
+}
+
+.streak-1{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-1 30s ease-in-out infinite;
+}
+
+.streak-2{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-2 30s ease-in-out infinite;
+}
+
+.streak-3{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-3 30s ease-in-out infinite;
+}
+
+.streak-4{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-4 30s ease-in-out infinite;
+}
+
+.streak-5{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-5 30s ease-in-out infinite;
+}
+
+.streak-6{
+  stroke-dasharray:303;
+  stroke-dashoffset:909;
+  animation: dash-6 30s ease-in-out infinite;
+}
+
+
+
+
+main{
+  color:#ffffff;
+  margin-bottom: 100px;
+ 
+
+}
+
+
+body > header, main {
+  margin:0 auto;
+}
+
+body > header {
+  text-align: center;
+  
+}
+
+
+body > header h1 {
+  text-transform: uppercase;
+}
+
+section > header {
+  text-align: center;
+  padding-bottom:20px;
+}
+
+.head {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 20px;
+  padding: 20px;
+  transition: background 0.5s;
+}
+
+
+section > section {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(310px, 1fr) );
+  gap:20px;
+  padding:20px;
+}
+
+section > article > h3 {
+  padding:0;
+  margin:0;
+  transition: transform 0.5s;
+}
+
+article > p{
+  transition: transform 0.5s;
+  transition-delay: 0.2s;
+}
+
+article > div{
+  transition: transform 0.5s;
+  transition-delay: 0.3s;
+}
+
+article{
+  text-align: center;
+  perspective: 800px;
+}
+
+
+article:hover > h3, article:hover > p, article:hover div {
+  transform: rotateY(360deg);
+}
+
+p{
+  margin-top:20px;
+}
+
+.card:focus{
+  background: #ffffff;
+  outline: none;
+  color: #000000;
+}
+
+
+
+/* KEYFRAME ANIMATIONS */
+
+@keyframes crawl {
+
+  0% {
+    top:1400px;
+    transform: rotateX(30deg);
+    transform: rotateX(35deg) translateZ(2500px);
+  }
+  100% {
+    top:-9000px;
+    transform: rotateX(35deg) translateZ(-2900px);
+  })
+}
+
+@keyframes starpulse{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0.2;
+  }
+}
+
+@keyframes dash-1 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  70%{
+    stroke-dashoffset:303;
+  }
+  72%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+@keyframes dash-2 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  60%{
+    stroke-dashoffset:303;
+  }
+  61%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+@keyframes dash-3 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  30%{
+    stroke-dashoffset:303;
+  }
+  32%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+@keyframes dash-4 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  40%{
+    stroke-dashoffset:303;
+  }
+  41%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+@keyframes dash-5 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  5%{
+    stroke-dashoffset:303;
+  }
+  6%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
+
+
+@keyframes dash-6 {
+
+  0%{
+    stroke-dashoffset:303;
+  }
+  20%{
+    stroke-dashoffset:303;
+  }
+  21%{
+    stroke-dashoffset:909;
+  }
+  100%{
+    stroke-dashoffset:909;
+  }
+}
